@@ -7,8 +7,20 @@ namespace Nurfl.Core
 {
     public class Device
     {
+        /// <summary>
+        /// Wurfl device id
+        /// </summary>
         public string Id { get; set; }
+
+        /// <summary>
+        /// Dictionary of a device capabilites
+        /// <see cref="http://wurfl.sourceforge.net/help_doc.php"/>
+        /// </summary>
         public Dictionary<string, object> Capabilities { get; set; }
+
+        /// <summary>
+        /// Device User Agent
+        /// </summary>
         public string UserAgent { get; set; }
 
         /// <summary>
@@ -18,7 +30,7 @@ namespace Nurfl.Core
         /// <returns>object</returns>
         public object GetCapability(string key)
         {
-            if (Capabilities[key] == null)
+            if (!Capabilities.ContainsKey(key))
                 throw new ArgumentOutOfRangeException("key");
 
             return Capabilities[key];
