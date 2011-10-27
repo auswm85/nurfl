@@ -23,7 +23,7 @@ namespace Nurfl.Core
 
         public NurflRequest()
         {
-            Request = (Request != null) ? Request : null;
+            Request = (HttpContext.Current.Request != null) ? HttpContext.Current.Request : null;
             UserAgent = (Request.UserAgent != null) ? Request.UserAgent : string.Empty;
         }
 
@@ -41,7 +41,7 @@ namespace Nurfl.Core
             if(string.IsNullOrEmpty(userAgent.Trim()))
                 throw new ArgumentNullException("userAgent");
 
-            Request = (Request != null) ? Request : null;
+            Request = (HttpContext.Current.Request != null) ? HttpContext.Current.Request : null;
             UserAgent = userAgent;
         }
 

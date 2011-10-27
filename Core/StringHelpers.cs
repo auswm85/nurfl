@@ -8,7 +8,7 @@ namespace Nurfl.Core
 {
     public static class StringHelpers
     {
-        //taken from Rob Connery
+        //taken from robconery https://github.com/robconery/sugar/blob/master/StringValidations.cs
         private const string URL_REGEX = @"^^(https?\:\/\/)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&%\$#_=]*)?$";
 
         public static bool IsValidUrl(this string url)
